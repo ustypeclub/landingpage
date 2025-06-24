@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>U.S. Type Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      color: #F5F5F5;
+    }
+
+    .parallax {
+      background-image: url('https://ustypeclub.github.io/brand/banner.png');
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .parallax h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: #F5F5F5;
+      margin-bottom: 0.5em;
+    }
+
+    .parallax h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-bottom: 1.5em;
+    }
+
+    .cta-button {
+      background-color: #B22222;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #8B1A1A;
+    }
+
+    header {
+      background-color: #B22222;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+      font-size: 1rem;
+      background: none;
+      border: 2px solid #F5F5F5;
+      color: #F5F5F5;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #B22222;
+      border: 1px solid #F5F5F5;
+      border-radius: 5px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    nav.show {
+      display: flex;
+    }
+
+    nav a {
+      color: #F5F5F5;
+      padding: 10px;
+      text-decoration: none;
+      border-bottom: 1px solid #F5F5F5;
+    }
+
+    nav a:last-child {
+      border-bottom: none;
+    }
+
+    main {
+      padding: 40px 20px;
+      background-color: #1A1A1A;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://ustypeclub.github.io/brand/logo.png" alt="U.S. Type Club Logo">
+      <span class="logo-title">U.S. Type Club</span>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+    <nav id="dropdownMenu">
+      <a href="#about">About</a>
+      <a href="#join">Join</a>
+      <a href="#community">Community</a>
+    </nav>
+  </header>
+
+  <section class="parallax">
+    <h1>Discover Your Psychological Type</h1>
+    <h2>Engage in open dialogue on typology, politics, religion, and more with a structured, vibrant community.</h2>
+    <a href="https://discord.gg/dont-talk-about-type-club" class="cta-button">Join the U.S. Type Club</a>
+  </section>
+
+  <main>
+    <p>Welcome to the U.S. Type Club, a place where minds meet and ideas flourish. Our structured server encourages deep discussions on typology, psychology, and the worldviews that shape our society. Governed by a unique constitution, members actively participate in a democratic environment through our Legislative, Judicial, and Executive branches.</p>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
