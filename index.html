@@ -6,6 +6,14 @@
   <title>U.S. Type Club</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #B22222;
+      --primary-dark: #8B1A1A;
+      --background: #1A1A1A;
+      --text: #F5F5F5;
+      --header-height: 60px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -13,59 +21,21 @@
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      color: #F5F5F5;
-    }
-
-    .parallax {
-      background-image: url('img/type club logo.gif');
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .parallax h1 {
-      font-family: 'Anton', sans-serif;
-      font-size: 2.5rem;
-      color: #F5F5F5;
-      margin-bottom: 0.5em;
-    }
-
-    .parallax h2 {
-      font-size: 1.2rem;
-      font-weight: normal;
-      margin-bottom: 1.5em;
-    }
-
-    .cta-button {
-      background-color: #B22222;
-      color: #fff;
-      padding: 15px 30px;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
       font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #8B1A1A;
     }
 
     header {
-      background-color: #B22222;
+      background-color: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 20px;
+      padding: 0 1.25rem;
+      height: var(--header-height);
       position: relative;
+      z-index: 10;
     }
 
     .logo {
@@ -77,38 +47,50 @@
     }
 
     .logo img {
-      height: 40px;
-      margin-right: 10px;
+      height: 2.5rem;
+      width: auto;
+      margin-right: 0.5rem;
+      max-width: 100%;
     }
 
     .logo-title {
       font-family: 'Anton', sans-serif;
       font-size: 1.5rem;
+      letter-spacing: 1px;
     }
 
     .menu-toggle {
-      font-size: 1rem;
+      font-size: 1.1rem;
       background: none;
-      border: 2px solid #F5F5F5;
-      color: #F5F5F5;
-      padding: 5px 10px;
+      border: 2px solid var(--text);
+      color: var(--text);
+      padding: 0.5em 1em;
       cursor: pointer;
       border-radius: 5px;
       position: absolute;
-      right: 20px;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+      transition: background 0.2s;
+    }
+    .menu-toggle:focus {
+      outline: 2px solid #fff;
     }
 
     nav {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #B22222;
-      border: 1px solid #F5F5F5;
+      top: var(--header-height);
+      right: 1.25rem;
+      background-color: var(--primary);
+      border: 1px solid var(--text);
       border-radius: 5px;
+      min-width: 150px;
       overflow: hidden;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     nav.show {
@@ -116,30 +98,155 @@
     }
 
     nav a {
-      color: #F5F5F5;
-      padding: 10px;
+      color: var(--text);
+      padding: 0.75em 1em;
       text-decoration: none;
-      border-bottom: 1px solid #F5F5F5;
+      border-bottom: 1px solid var(--text);
+      font-size: 1rem;
+      transition: background 0.2s;
     }
 
     nav a:last-child {
       border-bottom: none;
     }
 
-    main {
-      padding: 40px 20px;
-      background-color: #1A1A1A;
+    nav a:hover,
+    nav a:focus {
+      background: var(--primary-dark);
+    }
+
+    .parallax {
+      background-image: url('img/type club logo.gif');
+      min-height: 60vh;
+      height: 100dvh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .parallax h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .parallax h2 {
+      font-size: 1.25rem;
+      font-weight: normal;
+      margin-bottom: 2em;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .cta-button {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1em 2em;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px) scale(1.03);
+      outline: none;
+    }
+
+    main {
+      padding: 3rem 1.5rem;
+      background-color: var(--background);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      .parallax h1 {
+        font-size: 2rem;
+      }
+      .logo-title {
+        font-size: 1.2rem;
+      }
+      main {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: row;
+        padding: 0 0.5rem;
+        height: 50px;
+      }
+      .logo {
+        left: 1rem;
+        transform: none;
+        position: static;
+      }
+      .logo img {
+        height: 2rem;
+        margin-right: 0.4rem;
+      }
+      .logo-title {
+        font-size: 1rem;
+      }
+      .menu-toggle {
+        right: 0.5rem;
+        font-size: 1rem;
+        padding: 0.4em 0.8em;
+      }
+      nav {
+        top: 50px;
+        right: 0.5rem;
+        min-width: 120px;
+      }
+      .parallax {
+        min-height: 50vh;
+        padding: 2rem 0.5rem;
+      }
+      .parallax h1 {
+        font-size: 1.3rem;
+      }
+      .parallax h2 {
+        font-size: 1rem;
+      }
+      .cta-button {
+        font-size: 1rem;
+        padding: 0.8em 1.2em;
+      }
+      main {
+        padding: 2rem 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="img/type club banner.png" alt="U.S. Type Club Banner">
+      <img src="img/type club banner.png" alt="U.S. Type Club Banner" />
       <span class="logo-title">U.S. Type Club</span>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+    <button class="menu-toggle" aria-controls="dropdownMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle navigation">Menu</button>
     <nav id="dropdownMenu">
       <a href="#about">About</a>
       <a href="#join">Join</a>
@@ -160,8 +267,19 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById('dropdownMenu');
-      menu.classList.toggle('show');
+      const btn = document.querySelector('.menu-toggle');
+      const isOpen = menu.classList.toggle('show');
+      btn.setAttribute('aria-expanded', isOpen);
     }
+    // Optional: Close menu when clicking outside on mobile
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('dropdownMenu');
+      const btn = document.querySelector('.menu-toggle');
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+        btn.setAttribute('aria-expanded', false);
+      }
+    });
   </script>
 </body>
 </html>
