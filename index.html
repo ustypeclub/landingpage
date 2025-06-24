@@ -17,7 +17,7 @@
     }
 
     .parallax {
-      background-image: url('img/type club logo.gif');
+      background-image: url('https://ustypeclub.github.io/brand/banner.png');
       height: 100vh;
       background-attachment: fixed;
       background-position: center;
@@ -63,14 +63,17 @@
       background-color: #B22222;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 10px 20px;
-      justify-content: space-between;
       position: relative;
     }
 
     .logo {
       display: flex;
       align-items: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .logo img {
@@ -91,6 +94,8 @@
       padding: 5px 10px;
       cursor: pointer;
       border-radius: 5px;
+      position: absolute;
+      right: 20px;
     }
 
     nav {
@@ -131,7 +136,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="img/type club banner.png" alt="U.S. Type Club Logo">
+      <img src="https://ustypeclub.github.io/brand/logo.png" alt="U.S. Type Club Logo">
       <span class="logo-title">U.S. Type Club</span>
     </div>
     <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
