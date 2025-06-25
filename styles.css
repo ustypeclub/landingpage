@@ -76,7 +76,7 @@ nav {
   position: absolute;
   top: var(--header-height);
   right: 1.25rem;
-  background-color: var(--background); /* Changed from var(--primary-dark) */
+  background-color: #1a1a1a; /* Set nav bar color to #1a1a1a */
   border: 1px solid var(--text);
   border-radius: 5px;
   min-width: 150px;
@@ -210,7 +210,7 @@ main {
     top: 50px;
     right: 0.5rem;
     min-width: 120px;
-    background-color: var(--background); /* Changed from var(--primary-dark) */
+    background-color: #1a1a1a; /* Set nav bar color to #1a1a1a on mobile */
   }
   .parallax {
     min-height: 50vh;
