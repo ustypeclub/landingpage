@@ -10,43 +10,58 @@
 <body>
   <header>
     <div class="logo">
-      <img src="img/logo only.png" alt="Logo Only" />
-      <span class="logo-title">U.S. Type Club</span>
+      <img src="https://ustypeclub.github.io/brand/logo.png" alt="U.S. Type Club Logo">
     </div>
-    <button class="menu-toggle" aria-controls="dropdownMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle navigation">Menu</button>
-    <nav id="dropdownMenu">
-      <a href="#about">About</a>
-      <a href="#join">Join</a>
-      <a href="#community">Community</a>
-    </nav>
+    <h1 class="animated-text">Join the U.S. Type Club Battalion</h1>
+    <h2 class="subheadline">Unite, analyze, and grow together.</h2>
   </header>
 
-  <section class="parallax">
-    <h1>Discover Your Psychological Type</h1>
-    <h2>Engage in open dialogue on typology, politics, religion, and more with a structured, vibrant community.</h2>
-    <a href="https://discord.gg/dont-talk-about-type-club" class="cta-button">Join the U.S. Type Club</a>
+  <section class="description">
+    <p>We’re a typology-based Discord community built for deep thinkers, personality theory enthusiasts, and curious minds. Engage in structured discussions, explore Socionics, MBTI, and more — all in a welcoming, military-inspired environment.</p>
   </section>
 
-  <main>
-    <p>Welcome to the U.S. Type Club, a place where minds meet and ideas flourish. Our structured server encourages deep discussions on typology, psychology, and the worldviews that shape our society. Governed by a unique constitution, members actively participate in a democratic environment through our Legislative, Judicial, and Executive branches.</p>
-  </main>
+  <section class="features">
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>Real-time Ops</h3>
+      <p>Join active voice chats, typology events, and community games.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h3>Veteran Support</h3>
+      <p>Gain insights from experienced members with years of typology experience.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚖️</div>
+      <h3>Community Debates</h3>
+      <p>Engage in respectful debates about models, theory, and application.</p>
+    </div>
+  </section>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('dropdownMenu');
-      const btn = document.querySelector('.menu-toggle');
-      const isOpen = menu.classList.toggle('show');
-      btn.setAttribute('aria-expanded', isOpen);
-    }
+  <section class="stats">
+    <div class="stat">
+      <span class="number">1,248</span>
+      <span class="label">Members</span>
+    </div>
+    <div class="stat">
+      <span class="number">312</span>
+      <span class="label">Active Daily</span>
+    </div>
+  </section>
 
-    document.addEventListener('click', function(e) {
-      const menu = document.getElementById('dropdownMenu');
-      const btn = document.querySelector('.menu-toggle');
-      if (!menu.contains(e.target) && !btn.contains(e.target)) {
-        menu.classList.remove('show');
-        btn.setAttribute('aria-expanded', false);
-      }
-    });
-  </script>
+  <section class="cta">
+    <a href="https://discord.gg/YOUR_INVITE" class="join-button">Join Now</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 U.S. Type Club. All rights reserved.</p>
+    <div class="social">
+      <a href="#">Twitter</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
